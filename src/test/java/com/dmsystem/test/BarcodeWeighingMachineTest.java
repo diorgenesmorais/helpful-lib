@@ -5,7 +5,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 import com.dmsystem.exceptions.ValidateException;
-import com.dmsystem.utils.BarcodeWeighingMachine;
+import com.dmsystem.useful.BarcodeWeighingMachine;
 
 public class BarcodeWeighingMachineTest {
 

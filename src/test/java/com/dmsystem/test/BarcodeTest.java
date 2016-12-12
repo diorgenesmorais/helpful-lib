@@ -6,7 +6,7 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import com.dmsystem.exceptions.ValidateException;
-import com.dmsystem.utils.Barcode;
+import com.dmsystem.useful.Barcode;
 
 public class BarcodeTest {
 

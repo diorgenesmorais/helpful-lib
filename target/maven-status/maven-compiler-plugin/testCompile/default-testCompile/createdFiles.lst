@@ -1,5 +1,7 @@
 com/dmsystem/test/DocumentTest$1.class
-com/dmsystem/test/DataFormatterTest.class
 com/dmsystem/test/DocumentTest.class
+com/dmsystem/test/BarcodeWeighingMachineTest.class
+com/dmsystem/test/BarcodeTest.class
+com/dmsystem/test/DataFormatterTest.class
 com/dmsystem/test/CNPJTest.class
 com/dmsystem/test/CPFTest.class

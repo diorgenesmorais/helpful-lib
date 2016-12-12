@@ -5,7 +5,7 @@ import static org.junit.Assert.fail;
 import org.junit.Test;
 
 import com.dmsystem.exceptions.ValidateException;
-import com.dmsystem.utils.Document;
+import com.dmsystem.useful.Document;
 
 public class DocumentTest {
 
@@ -13,7 +13,7 @@ public class DocumentTest {
 	private Document doc;
 
 	@Test(expected = ValidateException.class)
-	public void deveLancaValidateException() throws Exception {
+	public void deveLancarValidateException() throws Exception {
 		doc = new Document(null) {
 
 			@Override

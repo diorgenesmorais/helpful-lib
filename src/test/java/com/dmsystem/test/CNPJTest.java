@@ -5,8 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import com.dmsystem.exceptions.ValidateException;
-import com.dmsystem.utils.CNPJ;
-import com.dmsystem.utils.Document;
+import com.dmsystem.useful.CNPJ;
+import com.dmsystem.useful.Document;
 
 public class CNPJTest {
 
