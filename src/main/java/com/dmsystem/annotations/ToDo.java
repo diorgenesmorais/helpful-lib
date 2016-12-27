@@ -1,4 +1,4 @@
-package com.dmsystem.utils;
+package com.dmsystem.annotations;
 
 import java.lang.annotation.Documented;
 import java.lang.annotation.ElementType;
