@@ -29,11 +29,11 @@ public final class CNPJ extends Document {
 		int soma = 0, peso, qtd, dezena, unidade;
 		String tg = "543298765432";
 
-		qtd = number.length();
-
-		if (qtd != 14) {
+		if (!number.matches("\\d{14}")) {
 			throw new ValidateException("O número deve possuir 14 digitos");
 		}
+
+		qtd = number.length();
 
 		for (int i = 0; i < 12; i++) {
 			soma += Character.getNumericValue(number.charAt(i)) * Character.getNumericValue(tg.charAt(i));
@@ -62,21 +62,9 @@ public final class CNPJ extends Document {
 
 	@Override
 	public String getNumberFormatted() {
-		int i, x = 0, z = 0;
-		StringBuilder formatted = new StringBuilder();
-
-		char[] m = { '.', '.', '/', '-' };
-		for (i = 0; i < 18; i++) {
-			if (i == 2 || i == 6 || i == 10 || i == 15) {
-				formatted.append(m[z]);
-				z++;
-			} else if (x < 14) {
-				formatted.append(getNumber().charAt(x));
-				x++;
-			}
-		}
-
-		return formatted.toString();
+		StringBuilder formatter = new StringBuilder(getNumber());
+		formatter.insert(2, ".").insert(6, ".").insert(10, "/").insert(15, "-");
+		return formatter.toString();
 	}
 
 }

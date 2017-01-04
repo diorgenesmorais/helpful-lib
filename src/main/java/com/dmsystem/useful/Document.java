@@ -14,7 +14,7 @@ public abstract class Document {
 	private final String number;
 
 	public Document(String number) throws ValidateException {
-		this.number = validateNumber(DataFormatter.extractOnlyNumbers(number));
+		this.number = validateNumber(number.replaceAll("\\.|-|/", ""));
 	}
 
 	protected abstract String validateNumber(String number) throws ValidateException;

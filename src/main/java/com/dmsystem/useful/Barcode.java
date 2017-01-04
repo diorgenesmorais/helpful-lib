@@ -14,7 +14,7 @@ public class Barcode {
 	private final String number;
 
 	public Barcode(String number) throws ValidateException {
-		this.number = getCodeValid(DataFormatter.extractOnlyNumbers(number));
+		this.number = getCodeValid(number.replaceAll("\\.|-|/", ""));
 	}
 
 	private String getCodeValid(String number) throws ValidateException {

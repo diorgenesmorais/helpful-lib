@@ -41,4 +41,10 @@ public class CPFTest {
 		document = new CPF(null);
 		fail("Deve lançar uma exceção: parâmetro não pode ser nulo");
 	}
+
+	@Test(expected = ValidateException.class)
+	public void devePossuirApenasNumero() throws Exception {
+		document = new CPF("76t.6t6.504-53");
+		fail("Deve lançar uma exceção: não pode conter caracteres");
+	}
 }

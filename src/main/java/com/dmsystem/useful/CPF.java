@@ -28,11 +28,12 @@ public final class CPF extends Document {
 
 		int soma = 0, peso, qtd, dv, dezena, unidade;
 
-		qtd = number.length();
-
-		if (qtd != 11) {
+		if (!number.matches("\\d{11}")) {
 			throw new ValidateException("O CPF deve possuir 11 digitos.");
 		}
+
+		qtd = number.length();
+
 		dv = 10;
 		for (int i = 0; i < 9; i++) {
 			soma += Character.getNumericValue(number.charAt(i)) * dv;
@@ -63,20 +64,8 @@ public final class CPF extends Document {
 
 	@Override
 	public String getNumberFormatted() {
-		int i, x = 0, z = 0;
-		StringBuilder formatted = new StringBuilder();
-
-		char[] mcr = { '.', '.', '-' };
-		for (i = 0; i < 14; i++) {
-			if (i == 3 || i == 7 || i == 11) {
-				formatted.append(mcr[z]);
-				z++;
-			} else if (x < 11) {
-				formatted.append(getNumber().charAt(x));
-				x++;
-			}
-		}
-
+		StringBuilder formatted = new StringBuilder(getNumber());
+		formatted.insert(3, ".").insert(7, ".").insert(11, "-");
 		return formatted.toString();
 	}
 
